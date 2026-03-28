@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Terminal, Star, CheckCircle2, Search, Zap, Code, Shield, Globe, Cpu, Sparkles, Activity } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [logs, setLogs] = useState<string[]>([
     "[SIGNAL] SCANNING_TALENT_LAYER",
     "[TASK] NEW_REQUEST: API_DEBUG",
@@ -88,9 +90,12 @@ const HeroSection = () => {
                   <textPath href="#badgePath" startOffset="0%">DEPLOY SPECIALIST • POST TASK • SCALE FAST •</textPath>
                 </text>
               </svg>
-              <div className="absolute bg-white/10 backdrop-blur-xl text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl border border-white/30 hover:bg-white/20 transition-all cursor-pointer">
+              <button
+                onClick={() => navigate('/teklancex')}
+                className="absolute bg-white/10 backdrop-blur-xl text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl border border-white/30 hover:bg-white/20 transition-all cursor-pointer"
+              >
                 <ArrowUpRight size={28} strokeWidth={2.5} />
-              </div>
+              </button>
             </motion.div>
           </motion.div>
         </div>
